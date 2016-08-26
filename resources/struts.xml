@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<constant name="struts.custom.i18n.resources" value="strutsfile"/>
+
+<constant name="struts.devMode" value="true" /> 
+
+<package name="login" extends="struts-default">
+
+<action name="Log_Auth" class="login.LoginAction" method="execute">
+
+<result name="CHECKER">/Checker.jsp</result>
+<result name="MAKER">/MakerSearch.jsp</result>
+<result name="FAIL">/index.jsp</result>
+<result name="input">/index.jsp</result>
+
+</action>
+
+<action name="logout" class="login.LoginAction" method="execute1">
+<result name="success">/index.jsp</result>
+
+</action>
+
+</package>
+
+<package name="maker" extends="struts-default">
+
+<action name="MakerSearch" class="maker.SearchForMaker" method="execute1">
+
+<result name="success">/SearchResults.jsp</result>
+<result name="error">/MakerMenu.jsp</result>
+
+
+</action>
+
+<action name="MakerMenu" class="maker.SearchForMaker" method="execute2">
+
+<result name="success">/MakerDelete.jsp</result>
+<result name="error">/MakerMenu.jsp</result>
+
+
+</action>
+<action name="MakerUpdate" class="maker.SearchForMaker" method="execute3">
+
+<result name="success">/MakerUpdate.jsp</result>
+<result name="error">/MakerMenu.jsp</result>
+
+
+</action>
+<action name="TakeRecord" class="maker.GetRecordToUpdate" method="execute">
+
+<result name="success">/UpdateHere.jsp</result>
+<result name="error">/MakerMenu.jsp</result>
+
+
+</action>
+<action name="DoUpdate" class="maker.FinalUpdate" method="execute">
+
+<result name="success">/MakerMenu.jsp</result>
+<result name="error">/MakerMenu.jsp</result>
+
+
+</action>
+
+<action name="Add" class="maker.MakVal" method="execute">
+
+<result name="success">/MakerMenu.jsp</result>
+<result name="error">/MakerMenu.jsp</result>
+<result name="input">/AddRecord.jsp</result>
+
+
+</action>
+
+
+<action name="MakerDelete" class="maker.DeleteForMaker" method="execute">
+
+<result name="success">/MakerMenu.jsp</result>
+<result name="error">/MakerMenu.jsp</result>
+
+
+</action>
+<action name="Checker" class="maker.AcceptAction" method="execute">
+
+<result name="success">/Checker.jsp</result>
+<result name="error">/Checker.jsp</result>
+
+
+</action>
+
+</package>
+
+</struts>
+
+
+  

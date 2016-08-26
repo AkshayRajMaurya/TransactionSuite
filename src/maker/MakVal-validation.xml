@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+ <!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN"
+    "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+        
+<validators>  
+ 
+        <field name="cust_code">
+      	<field-validator type="requiredstring">
+        <message>Customer Code is required.</message>
+      	</field-validator>
+      
+      <field-validator type="regex">
+   	  	<param name="fieldName">cust_code</param>
+   		<param name="expression">^[a-zA-Z0-9\\s]{1,10}+$</param>
+   		<message>Customer code must be alphanumeric.</message>  
+     </field-validator>
+  	 </field>
+   
+   <field name="cust_name">
+      <field-validator type="requiredstring">
+         <message>Customer Name is required.</message>
+      </field-validator>
+      
+      <field-validator type="regex">
+   	  	<param name="fieldName">cust_name</param>
+   		<param name="expression">^[a-zA-Z0-9\\s]{1,30}+$</param>
+   		<message>Customer name must be alphanumeric.</message>  
+      </field-validator>
+   </field>
+   
+   
+   <field name="cust_add1">
+      <field-validator type="requiredstring">
+         <message>Customer Address 1 is required.</message>
+      </field-validator>
+      
+      <field-validator type="regex">
+   	  	<param name="fieldName">cust_add1</param>
+   		<param name="expression">^[a-zA-Z0-9-,.:/\\s]{1,100}+$</param>
+   		<message>Invalid Customer Address 1.</message>  
+      </field-validator>
+   </field>
+   
+   
+   <field name="cust_add2">
+           
+      <field-validator type="regex">
+   	  	<param name="fieldName">cust_add2</param>
+   		<param name="expression">^[a-zA-Z0-9-,.:/\\s]{1,100}+$</param>
+   		<message>Invalid Customer Address 2.</message>  
+      </field-validator>
+   </field>
+   
+   
+   <field name="cust_pincode">
+      <field-validator type="requiredstring">
+         <message>Pin Code is required.</message>
+      </field-validator>
+      
+      <field-validator type="regex">
+   	  	<param name="fieldName">cust_pincode</param>
+   		<param name="expression">^[0-9]{6}+$</param>
+   		<message>Pin code is invalid.</message>  
+      </field-validator>
+   </field>
+   
+   
+   <field name="email">
+      <field-validator type="requiredstring">
+         <message>Email is required.</message>
+      </field-validator>
+      
+      <field-validator type="email">
+   		<message>Must provide a valid email</message>
+	  </field-validator>
+   </field>
+   
+   
+   <field name="contact_num">
+      <field-validator type="requiredstring">
+         <message>Contact number is required.</message>
+      </field-validator>
+      
+      <field-validator type="regex">
+   	  	<param name="fieldName">contact_num</param>
+   		<param name="expression">^[0-9]{0,10}+$</param>
+   		<message>Invaid contact number.</message>  
+      </field-validator>
+   </field>
+   
+   <field name="primary_contact_person">
+      <field-validator type="requiredstring">
+         <message>Contact person is required.</message>
+      </field-validator>
+      
+      <field-validator type="regex">
+   	  	<param name="fieldName">primary_contact_person</param>
+   		<param name="expression">^[a-zA-Z0-9-.\\s]{1,100}+$</param>
+   		<message>Invaid contact person.</message>  
+      </field-validator>
+   </field>
+   
+     
+        
+</validators>  
+         
